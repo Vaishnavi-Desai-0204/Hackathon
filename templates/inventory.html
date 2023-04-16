@@ -5,14 +5,15 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylecss/rough.css') }}">
         <style>
             body{
-                background-image: url("{{ url_for('static', filename='images/empty.jpg') }}");
+                background-image: url("{{ url_for('static', filename='images/empty_closet.jpg') }}");
                 background-size: cover;
             }
         </style>
                
     </head>
     <body>
-        <h1>Inventory</h1>
+        <div class="heading" ><h1>My Closet Recommendations</h1></div>
+       
         <!-- <ul>
             {% for filename in files %}
                 <li><img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="{{ filename }}"></li>
