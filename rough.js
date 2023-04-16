@@ -21,6 +21,25 @@
 //     }
 // });
 
+
+
+
+
+// CODE THAT CONTROLS HOVER ROTATION OF OUTFITS
+const outfits = document.querySelectorAll('.outfit');
+
+outfits.forEach(outfit => {
+  outfit.addEventListener('mouseover', () => {
+    outfit.querySelector('.hanger').style.transform = 'rotate3d(0, 0, 0, 0deg)';
+    outfit.querySelector('.top').style.transform = 'rotate3d(0, 0, 0, 0deg)';
+  });
+
+  outfit.addEventListener('mouseout', () => {
+    outfit.querySelector('.hanger').style.transform = 'rotate3d(0, 1, 0, 80deg)';
+    outfit.querySelector('.top').style.transform = 'rotate3d(0, 1, 0, 80deg)';
+  });
+});
+
 // CODE THAT DYNAMICALLY ADDS OUTFITS IN THE CONVEYOR-BELT CONTAINER
 // Array of outfit image paths
 const numOutfits = 7;
@@ -36,10 +55,10 @@ const outfitImages = [
 ];
 
 
-const outfitsContainer = document.getElementById("outfits-container");
+const outfitsContainer = document.querySelector(".conveyor-container");
 
-// Loop through the number of outfits and add an outfit element for each one
-for (let i = 1; i < numOutfits; i++) {
+//Loop through the number of outfits and add an outfit element for each one
+for (let i = 0; i < numOutfits; i++) {
 	// Create a new outfit element
 	const outfitElement = document.createElement("div");
 	outfitElement.classList.add("outfit");
@@ -63,22 +82,5 @@ for (let i = 1; i < numOutfits; i++) {
 	// Add the outfit element to the container
 	outfitsContainer.appendChild(outfitElement);
 }
-
-
-
-// CODE THAT CONTROLS HOVER ROTATION OF OUTFITS
-const outfits = document.querySelectorAll('.outfit');
-
-outfits.forEach(outfit => {
-  outfit.addEventListener('mouseover', () => {
-    outfit.querySelector('.hanger').style.transform = 'rotate3d(0, 0, 0, 0deg)';
-    outfit.querySelector('.top').style.transform = 'rotate3d(0, 0, 0, 0deg)';
-  });
-
-  outfit.addEventListener('mouseout', () => {
-    outfit.querySelector('.hanger').style.transform = 'rotate3d(0, 1, 0, 80deg)';
-    outfit.querySelector('.top').style.transform = 'rotate3d(0, 1, 0, 80deg)';
-  });
-});
 
 

@@ -1,0 +1,75 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Closets Closets Closets</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type='text/css' href="style_index.css">
+	<script src="script.js"></script>
+</head>
+<body>
+	<div class="logo-container">
+		<a href="index.html"><div class="logo">CCC</div></a>
+	</div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #000000;
+		}
+		
+		video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		
+		#overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			color: #FFFFFF;
+			font-size: 2rem;
+			font-weight: bold;
+			text-align: center;
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+	<video id="myVideo" autoplay muted>
+		<source src="opening.mp4" type="video/mp4">
+	</video>
+	
+	<div id="overlay">
+		<p></p>
+	</div>
+	
+	<script>
+		var video = document.getElementById("myVideo");
+		video.addEventListener('ended',function(){
+			window.location.href = "mainpage.html";
+		});
+	</script>
+</body>
+</html>
+
+

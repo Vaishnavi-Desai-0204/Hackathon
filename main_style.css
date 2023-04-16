@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("background_index.jpeg");
+  background-size: cover;
+  
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  font-family: "Luminari", sans-serif;
+  color:rgb(243, 240, 240);
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: rgb(243, 240, 240);
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #777;
+}
+
+.intro {
+  text-align: center;
+  margin-top: 10rem;
+  transform: translateY(50px);
+}
+
+.intro h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #777;
+  cursor: pointer;
+}
+
+/* Animation styles */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.logo {
+	font-size: 120px;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	animation: rotate 5s infinite;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
