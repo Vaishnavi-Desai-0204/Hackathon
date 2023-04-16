@@ -2,30 +2,32 @@
 <html>
     <head>
         <title>Inventory</title>
-        <style>
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-            li {
-                display: inline-block;
-                margin: 10px;
-                width: 200px;
-            }
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylecss/rough.css') }}">
+
+               
     </head>
     <body>
         <h1>Inventory</h1>
-        <ul>
+        <!-- <ul>
             {% for filename in files %}
                 <li><img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="{{ filename }}"></li>
             {% endfor %}
-        </ul>
+        </ul> -->
+
+        <div class="conveyer-container" height="700px">
+            {% for filename in files %}
+                 {% if filename.endswith('.png') %}
+                     <div class="outfit" height="700px">
+                         <img class="rod" src="{{ url_for('static', filename='images/rodfinal.png') }}">
+                         </br>
+                         <img class="hanger" src="{{ url_for('static', filename='images/hanger1.png') }}">
+                         </br>
+                         <img class="top" src="{{ url_for('static', filename='uploads/' + filename) }}">
+                     </div>
+                 {% endif %}
+             {% endfor %}
+         </div>
+
     </body>
 </html>
 
