@@ -43,9 +43,11 @@ def extract_features(img_path,model):
 
     return normalized_result
 
+# randomly select 10000 images from the dataset
 filenames = []
-
-for file in os.listdir('fashion-dataset/images'):
+all_filenames = os.listdir('fashion-dataset/images')
+selected_filenames = np.random.choice(all_filenames, size=10000, replace=False)
+for file in selected_filenames:
     filenames.append(os.path.join('fashion-dataset/images',file))
 
 feature_list = []
@@ -55,4 +57,5 @@ for file in tqdm(filenames):
 
 pickle.dump(feature_list,open('embeddings.pkl','wb'))
 pickle.dump(filenames,open('filenames.pkl','wb'))
+
 

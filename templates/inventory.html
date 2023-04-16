@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inventory</title>
+        <style>
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                display: inline-block;
+                margin: 10px;
+                width: 200px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Inventory</h1>
+        <ul>
+            {% for filename in files %}
+                <li><img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="{{ filename }}"></li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
+
