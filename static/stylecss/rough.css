@@ -1,12 +1,22 @@
+body{
+	background-image: url("closet.png");
+	background-size: cover;
+}
+
 /* Style for the conveyer container */
 .conveyer-container {
 	display: flex;
 	flex-wrap: nowrap;
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
+	padding-left: 30px;
 	width: 100%;
-	height: 700px;
+	height: 300px;
 }
+
+.conveyer-container::-webkit-scrollbar{
+    display: none;
+  }
 
 /* Style for each item on the conveyer
 .conveyer-item {
@@ -36,12 +46,17 @@
 	transform: translate(-50%, -50%);
   }
 
+ .outfit {
+	padding-left: 10;
+	margin: 0 -30px;
+ } 
+
 .rod {
 	background-image: url("rodfinal.png");
 	background-size: contain;
 	background-repeat: no-repeat;
-	width: 400px;
-	height: 10px;
+	width: 100%;
+	height: 8px;
 	position: relative;
 	top: 50px; /* adjust to position the rod vertically */
 	z-index: 1;
@@ -51,11 +66,11 @@
 	/* background-image: url("hanger1.png"); */
 	background-size: contain;
 	background-repeat: no-repeat;
-	width: 200px;
-	height: 200px;
+	width: 110px;
+	height: 100px;
 	position: relative;
 	transform: rotate3d(0,1,0,80deg);
-	top: -20px; /* adjust to position the hanger on the rod */
+	top: 10px; /* adjust to position the hanger on the rod */
 	left: 20px; /* adjust to position the hanger on the rod */
 	z-index: 2;
 	/* transform: rotate(45deg); rotate the hanger to hang on the rod */
@@ -64,11 +79,11 @@
   .top {
 	background-size: contain;
 	background-repeat: no-repeat;
-	width: 400px;
-	height: 500px;
+	width: 200px;
+	height: 200px;
 	position: relative;
-	top: -25.2%;
-	left: -20%;
+	top: -21%;
+	left: -13%;
 	transform: rotate3d(0,1,0,80deg);
 	/* top: -165px; /* adjust to position the top on the hanger */
 	/* left: -80px; adjust to position the top on the hanger */
@@ -82,6 +97,11 @@
   
   .outfit:hover .top {
 	transform: rotate3d(0, 0, 0, 0deg);
+	transform: scale(1.1);
   } 
 
-  /*  end
+  .outfit:hover + .outfit {
+	transform: translateX(20px);
+  }
+
+  

@@ -3,7 +3,12 @@
     <head>
         <title>Inventory</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylecss/rough.css') }}">
-
+        <style>
+            body{
+                background-image: url("{{ url_for('static', filename='images/empty.jpg') }}");
+                background-size: cover;
+            }
+        </style>
                
     </head>
     <body>
@@ -13,13 +18,29 @@
                 <li><img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="{{ filename }}"></li>
             {% endfor %}
         </ul> -->
-
+        <img class="rod" src="{{ url_for('static', filename='images/rodfinal.png') }}">
+        
         <div class="conveyer-container" height="700px">
+            
             {% for filename in files %}
                  {% if filename.endswith('.png') %}
                      <div class="outfit" height="700px">
-                         <img class="rod" src="{{ url_for('static', filename='images/rodfinal.png') }}">
+                         
+                         <img class="hanger" src="{{ url_for('static', filename='images/hanger1.png') }}">
                          </br>
+                         <img class="top" src="{{ url_for('static', filename='uploads/' + filename) }}">
+                     </div>
+                 {% endif %}
+             {% endfor %}
+         </div>
+
+         <img class="rod" src="{{ url_for('static', filename='images/rodfinal.png') }}">
+         <div class="conveyer-container" height="700px">
+            
+            {% for filename in files %}
+                 {% if filename.endswith('.png') %}
+                     <div class="outfit" height="700px">
+                         
                          <img class="hanger" src="{{ url_for('static', filename='images/hanger1.png') }}">
                          </br>
                          <img class="top" src="{{ url_for('static', filename='uploads/' + filename) }}">
